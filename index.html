@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VEDA OS</title>
+    <link rel="stylesheet" href="./src/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="rail" aria-label="VEDA navigation">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">V</div>
+          <div>
+            <p class="eyebrow">VEDA</p>
+            <h1>OS</h1>
+          </div>
+        </div>
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-item is-active" data-view="today">Today</button>
+          <button class="nav-item" data-view="map">Map</button>
+          <button class="nav-item" data-view="pulse">Pulse</button>
+        </nav>
+        <section class="rail-panel">
+          <p class="panel-label">Current Mode</p>
+          <strong>Build the foundation</strong>
+          <span>Shape the system before scaling the surface.</span>
+        </section>
+      </aside>
+
+      <section class="workspace" aria-live="polite">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="view-kicker">Today</p>
+            <h2 id="view-title">Morning command surface</h2>
+          </div>
+          <button class="primary-action" id="focus-action">Generate next move</button>
+        </header>
+
+        <section id="view-root" class="view-root"></section>
+      </section>
+    </main>
+
+    <script src="./src/main.js" type="module"></script>
+  </body>
+</html>
