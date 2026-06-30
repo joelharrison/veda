@@ -34,3 +34,9 @@ The intended remote is `joelharrison/veda`, but this Codex environment could not
 git remote add origin https://github.com/joelharrison/veda.git
 git push -u origin main
 ```
+
+## Durable Sharing
+
+Do not rely on a quick Cloudflare tunnel for review links that need to survive overnight. Push this repository to GitHub and use the included GitHub Pages workflow for a stable public URL.
+
+After the repo exists and Pages is enabled, pushes to `main` deploy the static prototype automatically.
