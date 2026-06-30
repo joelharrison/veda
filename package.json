@@ -5,7 +5,8 @@
   "description": "VEDA OS: an intentional operating layer for personal work, knowledge, and momentum.",
   "type": "module",
   "scripts": {
-    "start": "python3 -m http.server 4173",
+    "start": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "share": "./scripts/share-local.sh",
     "check": "node --check src/main.js"
   }
 }
