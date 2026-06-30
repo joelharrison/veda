@@ -9,6 +9,7 @@
   --blue: #345e8a;
   --red: #9b4f43;
   --gold: #ad8434;
+  --plum: #5d4b73;
   --shadow: 0 18px 45px rgba(31, 32, 28, 0.08);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -62,7 +63,7 @@ button {
 
 .brand h1,
 .topbar h2,
-.focus-band h3,
+.manifesto-band h3,
 .module h3,
 .domain-card h3 {
   margin: 0;
@@ -153,9 +154,9 @@ button {
   gap: 22px;
 }
 
-.focus-band {
+.manifesto-band {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-columns: minmax(0, 1fr) 360px;
   gap: 20px;
   padding: 26px;
   border: 1px solid var(--line);
@@ -163,38 +164,45 @@ button {
   box-shadow: var(--shadow);
 }
 
-.focus-band h3 {
-  max-width: 720px;
-  font-size: clamp(1.8rem, 3vw, 3.5rem);
+.manifesto-band h3 {
+  max-width: 860px;
+  font-size: clamp(1.8rem, 3vw, 3.75rem);
   line-height: 1;
 }
 
-.focus-band p {
-  max-width: 650px;
+.manifesto-band p {
+  max-width: 760px;
   color: var(--muted);
   font-size: 1.05rem;
   line-height: 1.55;
 }
 
-.next-move {
+.steering-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 18px;
   min-height: 190px;
   padding: 20px;
-  background: var(--green);
+  background: var(--ink);
   color: #fffdf5;
 }
 
-.next-move span {
+.steering-card span {
   font-size: 0.78rem;
   font-weight: 760;
   text-transform: uppercase;
 }
 
-.next-move strong {
+.steering-card strong {
   font-size: 1.35rem;
   line-height: 1.2;
+}
+
+.steering-card p {
+  margin: 0;
+  color: rgba(255, 253, 245, 0.72);
+  line-height: 1.45;
 }
 
 .content-grid,
@@ -232,27 +240,29 @@ button {
   font-size: 0.85rem;
 }
 
-.action-list {
+.audit-list {
   display: grid;
   gap: 8px;
   margin: 0;
   padding-left: 22px;
 }
 
-.action-list li {
+.audit-list li {
   padding-left: 6px;
 }
 
-.action-list li::marker {
+.audit-list li::marker {
   color: var(--muted);
 }
 
-.action-list li.is-selected::marker {
+.audit-list li.is-selected::marker {
   color: var(--green);
   font-weight: 800;
 }
 
-.action-list button {
+.audit-list button {
+  display: grid;
+  gap: 4px;
   width: 100%;
   padding: 12px 14px;
   background: var(--panel);
@@ -260,8 +270,17 @@ button {
   text-align: left;
 }
 
-.action-list li.is-selected button,
-.action-list button:hover {
+.audit-list span,
+.audit-result span,
+.ritual-list button span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.audit-list li.is-selected button,
+.audit-list button:hover {
   border-color: var(--green);
   background: #eef6f1;
 }
@@ -273,24 +292,62 @@ button {
   gap: 10px;
 }
 
-.ritual-list article,
+.ritual-list button,
 .decision-list p,
 .log-list p {
   margin: 0;
   padding: 14px;
+  border: 1px solid transparent;
   background: var(--panel);
 }
 
-.ritual-list article {
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
+.ritual-list button {
+  display: grid;
+  gap: 6px;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
 }
 
-.ritual-list span,
+.ritual-list button:hover,
+.ritual-list button.is-selected {
+  border-color: var(--plum);
+  background: #f0edf4;
+}
+
+.ritual-list p,
 .decision-list p,
 .log-list p {
   color: var(--muted);
+}
+
+.ritual-list p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.audit-result {
+  display: grid;
+  gap: 12px;
+  min-height: 100%;
+  padding: 20px;
+  background: #f0edf4;
+}
+
+.audit-result p,
+.practice-panel p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.audit-result button {
+  align-self: end;
+  min-height: 42px;
+  border: 1px solid var(--plum);
+  background: var(--plum);
+  color: white;
+  cursor: pointer;
 }
 
 .domain-card {
@@ -323,6 +380,39 @@ button {
   line-height: 1.5;
 }
 
+.domain-card small {
+  display: block;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--red);
+  line-height: 1.4;
+}
+
+.practice-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+  gap: 18px;
+}
+
+.practice-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 430px;
+  background: #ffffff;
+}
+
+.practice-panel h3 {
+  font-size: clamp(2.2rem, 4vw, 4.8rem);
+  line-height: 0.95;
+}
+
+.practice-panel strong {
+  color: var(--plum);
+  font-size: 1.4rem;
+}
+
 .pulse-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.8fr);
@@ -341,6 +431,14 @@ button {
   place-items: center;
   gap: 14px;
   padding: 20px;
+}
+
+.signal p {
+  max-width: 180px;
+  margin: -4px 0 0;
+  color: var(--muted);
+  line-height: 1.4;
+  text-align: center;
 }
 
 .dial {
@@ -365,9 +463,10 @@ button {
 
 @media (max-width: 860px) {
   .app-shell,
-  .focus-band,
+  .manifesto-band,
   .content-grid,
   .domain-grid,
+  .practice-layout,
   .pulse-layout,
   .signal-grid {
     grid-template-columns: 1fr;
@@ -379,15 +478,14 @@ button {
   }
 
   .nav {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .nav-item {
     text-align: center;
   }
 
-  .topbar,
-  .ritual-list article {
+  .topbar {
     align-items: stretch;
     flex-direction: column;
   }
@@ -403,7 +501,7 @@ button {
     font-size: 2.25rem;
   }
 
-  .focus-band {
+  .manifesto-band {
     padding: 18px;
   }
 }
