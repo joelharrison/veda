@@ -37,6 +37,10 @@ git push -u origin main
 
 ## Durable Sharing
 
-Do not rely on a quick Cloudflare tunnel for review links that need to survive overnight. Push this repository to GitHub and use the included GitHub Pages workflow for a stable public URL.
+Do not rely on a quick Cloudflare tunnel for review links that need to survive overnight. This repository is configured for GitHub Pages and serves the static prototype directly from the `main` branch root:
 
-After the repo exists and Pages is enabled, pushes to `main` deploy the static prototype automatically.
+```text
+https://joelharrison.github.io/veda/
+```
+
+Pushes to `main` update the public prototype automatically after GitHub's Pages cache refreshes.
